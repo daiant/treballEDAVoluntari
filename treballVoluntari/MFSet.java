@@ -29,26 +29,25 @@ public class MFSet {
 	if (rep1 != rep2){
 	    if (mfset[rep1] <  mfset[rep2]) { //el arbre primer es mes gran
 		mfset[rep2] = rep1;
+		mfset[rep1] += -1;
 	    } else {
 		mfset[rep1] = rep2;
-		if (mfset[rep1] == mfset[rep2]){
-		    mfset[rep2]--;
-		}
+		mfset[rep2] -= 1;
 	    }
 	}
 	return true;
     }
     
     public int findCardinalitat(int x){
-        int res = 1;
-        int num = find(x);
-        for(int i = 0; i < mfset.length -1; i++){
-            if(mfset[i] == num){
-                res += findCardinalitat(x);
-            }
-        }
-        return res;
-        // int sizeX = find(x) * -1; // Número de pixeles en el conjunto, no?
-        // return Math.abs(sizeX); // Pues al revés
+        // int res = 1;
+        // int num = find(x);
+        // for(int i = 0; i < mfset.length -1; i++){
+            // if(mfset[i] == num){
+                // res += findCardinalitat(x);
+            // }
+        // }
+        // return res;
+        int sizeX = find(x); // Número de pixeles en el conjunto, no?
+        return Math.abs(sizeX); // Pues al revés
     }
 }
