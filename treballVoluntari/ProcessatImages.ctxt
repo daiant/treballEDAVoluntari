@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=ProcessatImages
+comment1.params=img\ llindar
+comment1.target=ProcessatImages(int[][],\ int)
+comment2.params=f\ c
+comment2.target=int\ pixel2Int(int,\ int)
+comment3.params=
+comment3.target=void\ netejar()
+comment4.params=
+comment4.target=int[][]\ getImage()
+numComments=5

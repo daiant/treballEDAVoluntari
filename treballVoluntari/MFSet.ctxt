@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=MFSet
+comment1.params=numElem
+comment1.target=MFSet(int)
+comment2.params=pos
+comment2.target=int\ find(int)
+comment3.params=elem1\ elem2
+comment3.target=boolean\ merge(int,\ int)
+comment4.params=x
+comment4.target=int\ findCardinalitat(int)
+numComments=5
