@@ -1,14 +1,18 @@
-
-public class MFSet implements MFSetInterface {
+ package src;
+public class MFSet {
     int [] mfset;
-    public MFSet() {}
+
     public MFSet(int numElem){
     mfset = new int[numElem];
     for (int i = 0; i < numElem; i++) {
         mfset[i]=-1;
     }
     }
-    @Override
+    public boolean initialize() {
+        for(int i = 0; i < mfset.length; i++) {
+            mfset[i]=-1;
+        }return true;
+    }
     public int find(int pos){
     if (pos < 0 || pos >= mfset.length){
         return -1; // no t√© representant
@@ -18,28 +22,26 @@ public class MFSet implements MFSetInterface {
     }
     return pos;
     }
-    @Override
-    public boolean merge(int elem1, int elem2){
-    //COMPLETAR
-    int r1 = find(elem1);
-    int r2 = find(elem2);
-    if(r1 != r2) {
-      if(mfset[r1]==mfset[r2]) {
-        mfset[r1] = r2;
-        mfset[r2]--;
-      } else if(mfset[r1] < mfset[r2]) {
-        mfset[r2] = r1;
-      } else {
-        mfset[r1] = r2;
-      }
-      return true; // Se ha mergeado
+
+ public boolean merge(int elem1, int elem2){
+        int rep1 = find(elem1);
+    int rep2 = find(elem2);
+    if (rep1 != rep2){
+        if (mfset[rep1] <  mfset[rep2]) { //el arbre primer es mes gran
+        mfset[rep2] = rep1;
+        } else {
+        mfset[rep1] = rep2;
+        if (mfset[rep1] == mfset[rep2]){
+            mfset[rep2]--;
+        }
+        }
+        return true;
     }
-    return false; // No hacia falta
+    return false;
     }
-    @Override
     public int findCardinalitat(int x){
     //COMPLETAR
-        int sizeX = find(x); // N˙mero de pixeles en el conjunto, no?
-        return Math.abs(sizeX); // Pues al revÈs
+        int sizeX = find(x); // NÔøΩmero de pixeles en el conjunto, no?
+        return Math.abs(sizeX); // Pues al revÔøΩs
     }
 }
