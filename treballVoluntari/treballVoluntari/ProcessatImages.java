@@ -19,7 +19,7 @@ public class ProcessatImages{
         try{
             final int BLACK=0;
             if (img == null) return;
-            MFSet api = new MFSet(img[0].length * img[1].length);
+            MFSet api = new MFSet(img.length * img[0].length);
     
           for(int f = 0; f < img.length -1 ; f++) {
               //System.out.println(f + " / " + img.length);
